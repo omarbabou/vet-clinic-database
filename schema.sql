@@ -63,13 +63,3 @@ CREATE TABLE visits (
     CONSTRAINT fk_animals FOREIGN KEY(animals_id) REFERENCES animals(id),
     CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
 );
-
----- perfomance audit/ week 2 day 1----------------
-
--- Add an email column to your owners table
-ALTER TABLE owners ADD COLUMN email VARCHAR(120);
-ALTER TABLE owners ALTER column age DROP NOT NULL;
-
-CREATE INDEX animals_id_index ON visits(animals_id);
-CREATE INDEX vet_id_index ON visits(vets_id);
-CREATE INDEX email_index ON owners(email);
